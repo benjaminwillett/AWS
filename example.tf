@@ -19,6 +19,8 @@ resource "aws_instance" "server2" {
 provisioner "local-exec" {
     command = "echo ${aws_instance.server2.public_ip} > ip_address.txt"
 }
+resource "aws_instance" "foo" {
+}
 }
 output "server1_ip" {
   value = aws_instance.server1.public_ip
